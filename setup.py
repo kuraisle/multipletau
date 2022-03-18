@@ -26,7 +26,7 @@ setup(
     license="BSD (3 clause)",
     description=description,
     long_description=open('README.rst').read() if exists('README.rst') else '',
-    install_requires=["numpy >= 1.5.1"],
+    install_requires=["numpy >= 1.5.1", "numba"],
     keywords=["multiple tau", "fluorescence correlation spectroscopy"],
     setup_requires=['pytest-runner'],
     tests_require=["pytest"],

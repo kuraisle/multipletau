@@ -71,7 +71,7 @@ The package is straightforward to use. Here is a quick example:
            [   8.        ,  386.39500297]])
 
 """
-from .core import autocorrelate, correlate, correlate_numpy  # noqa: F401
+from .core import autocorrelate, autocorrelate_with_jit, correlate, correlate_numpy  # noqa: F401
 from ._version import version as __version__  # noqa: F401
 
 __author__ = u"Paul Müller"

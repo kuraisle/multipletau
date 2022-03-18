@@ -37,6 +37,7 @@ from __future__ import division
 
 import numpy as np
 import warnings
+from numba import jit
 
 __all__ = ["autocorrelate", "correlate", "correlate_numpy"]
 
@@ -298,6 +299,10 @@ def autocorrelate(a, m=16, deltat=1, normalize=False, copy=True, dtype=None,
         return G, normstat
     else:
         return G
+
+@jit(parallel = True)
+def autocorrelate_with_jit(a, **kwargs):
+    return autocorrelate(a, **kwargs)
 
 
 def correlate(a, v, m=16, deltat=1, normalize=False, copy=True, dtype=None,
